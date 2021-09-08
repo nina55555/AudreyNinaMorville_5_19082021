@@ -1,0 +1,82 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+body {
+  background-color: #cdd1d0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-fluid{
+  /*background-color: rgb(177, 217, 223);*/
+  background-image: url("/images/images (5).jpg " );
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 5px;
+}
+
+header {
+  background-color: cornsilk;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  /*margin: 0px auto 180px;*/
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 1px solid black;
+}
+
+header ul {
+  /*background-color: darkcyan;*/
+  display: flex;
+  margin-left: auto;
+}
+
+
+p{
+  text-align: center;
+}
+h1 {
+  /*background-color: crimson;*/
+  margin: 0px auto 50px;
+  
+}
+
+
+#shop{
+  background-color: rgb(0, 119, 128);
+  width: 90%;
+  height: 50%;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.cadré{
+  background-color: pink;
+  padding: 5px;
+  width: 20%;
+  height: 40%;
+  border-radius: 5px;
+}
+
+
+/*# sourceMappingURL=index.style.css.map */
