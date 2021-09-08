@@ -51,13 +51,12 @@ fetch('http://localhost:3000/api/teddies')
         let liste = `<a href="produit.js">`;
             for (let teddy of data){
             liste += `<div>${teddy.name}</div>`;
-            liste +=  `<div>${teddy.price}</div>`;
-            liste += `<img src="${teddy.imageUrl}"width=20% >`;
-            
-
+            liste +=  `<div>${teddy.price.add}</div>`;
+            liste += `<img src="${teddy.imageUrl}"width=20%>`;
             }
         liste += `</a>`;
-        document.getElementById("shop").innerHTML = liste;  
+        document.getElementById("shop").innerHTML = liste; 
+        document.body.style.color = "white";
         }
     ) 
     .catch((e) => console.log(e))
