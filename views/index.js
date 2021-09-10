@@ -67,6 +67,16 @@ fetch('http://localhost:3000/api/teddies')
     
   
 
+
+
+
+
+
+
+
+
+/*
+
 fetch('http://localhost:3000/api/teddies')
     .then(resp =>
         resp.json()
@@ -86,18 +96,42 @@ fetch('http://localhost:3000/api/teddies')
         }  
     ) 
     .catch((e)=> console.log(e))
+*/
 
 
+//--------
+//fonction
+//--------
 
 
+const url = ('http://localhost:3000/api/teddies')
+//mettre l'api des teddies dans la constante url
+const bigBox = document.getElementById("shop")
+//faire la boucle a l'interieur de la bigBox
+const smallCard = document.getElementById("teddy")
+//ajouter les images dans ces divs puis injecter les noms d'api puis append les smallCards dans la bigBox
 
-       /*
-            const div = document.createElement("div")
-            const img = document.createElement("img")
-            img.scr = (teddy.imageUrl)
-            div.append("img")
-            /*
+const nomination = document.getElementById("nomination")
+const price = document.getElementById("price")
 
-            /*
-            div.innerHTML = `<img src= ${teddy.imageUrl}>`
-            */
+fetch(url)
+    .then(resp =>
+        resp.json()
+    )
+    .then(data => {        
+
+            for (let teddy of data){ 
+                smallCard.classList.add("pic-style")
+                smallCard.classList.add(".card")
+                smallCard.innerHTML = `<img src = "${teddy.imageUrl}">`;
+                price.innerHTML = teddy.price
+                nomination.innerHTML = teddy.name
+            }  
+            
+            smallCard.append(nomination)
+            smallCard.append(price)
+            bigBox.append(smallCard) 
+    }  
+        
+    ) 
+    .catch((e)=> console.log(e)) 
