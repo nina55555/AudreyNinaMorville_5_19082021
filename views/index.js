@@ -103,7 +103,7 @@ fetch('http://localhost:3000/api/teddies')
 //fonction
 //--------
 
-
+/*
 const url = ('http://localhost:3000/api/teddies')
 //mettre l'api des teddies dans la constante url
 const bigBox = document.getElementById("shop")
@@ -121,18 +121,53 @@ fetch(url)
     )
     .then(data => {        
 
-            for (let teddy of data){ 
-                smallCard.classList.add(".card")
-                imgCard.classList.add("pic-style")
-                imgCard.innerHTML = `<img src = "${teddy.imageUrl}">`;
-                price.innerHTML = teddy.price + '$'
-                nomination.innerHTML = teddy.name
+        for (let teddy of data){ 
+            smallCard.classList.add(".card")
+            imgCard.classList.add("pic-style")
+            imgCard.innerHTML = `<img src = "${teddy.imageUrl}">`;
+            price.innerHTML = teddy.price + '$'
+            nomination.innerHTML = teddy.name
             smallCard.append(nomination)
             smallCard.append(price)
-            bigBox.append(smallCard) }  
-            
-            
+            bigBox.append(smallCard) 
+        }  
     }  
         
     ) 
     .catch((e)=> console.log(e)) 
+
+
+    */
+
+
+
+function getProducts(){
+    console.log("function get products");
+    fetch('http://localhost:3000/api/teddies')
+    .then(resp =>
+        resp.json()
+    )
+    .then(data => {  
+        showProducts(data);
+    }      
+    )
+    .catch((e)=> console.log(e));
+}
+const box = document.getElementById("teddy")
+
+function showProducts(products){
+    for (let teddy of products){
+        box.innerHTML += 
+        `<div class ="card">
+            <div class ="card-img">
+                <img src =${teddy.imageUrl} alt="teddy's picture" />
+            </div>
+            <div class ="card-infos">
+                <p class ="info-name">${teddy.name}</p>
+                <p class ="info-price">${teddy.price}$</p>
+            </div>
+        </div>`;
+    }
+}
+
+getProducts();
