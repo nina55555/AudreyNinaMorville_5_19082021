@@ -158,7 +158,7 @@ const box = document.getElementById("teddy")
 function showProducts(products){
     for (let teddy of products){
         box.innerHTML += 
-        `<div class ="card">
+        `<a href="produit.html" class ="card">
             <div class ="card-img">
                 <img src =${teddy.imageUrl} alt="teddy's picture" />
             </div>
@@ -166,8 +166,9 @@ function showProducts(products){
                 <p class ="info-name">${teddy.name}</p>
                 <p class ="info-price">${teddy.price}$</p>
             </div>
-        </div>`;
+        </a>`;
     }
 }
 
 getProducts();
+

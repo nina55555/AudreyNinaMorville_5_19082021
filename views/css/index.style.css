@@ -68,9 +68,6 @@ header ul li a {
   background-size: cover;
   width: 100%;
   height: 100%;
-  /*display: flex;
-    flex-direction: column;
-    */
 }
 
 .entête {
@@ -146,6 +143,7 @@ header ul li a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  cursor: pointer;
 }
 
 /************
