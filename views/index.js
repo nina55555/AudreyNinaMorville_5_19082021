@@ -110,6 +110,7 @@ const bigBox = document.getElementById("shop")
 //faire la boucle a l'interieur de la bigBox
 const smallCard = document.getElementById("teddy")
 //ajouter les images dans ces divs puis injecter les noms d'api puis append les smallCards dans la bigBox
+const imgCard = document.getElementById("img-card")
 
 const nomination = document.getElementById("nomination")
 const price = document.getElementById("price")
@@ -121,16 +122,16 @@ fetch(url)
     .then(data => {        
 
             for (let teddy of data){ 
-                smallCard.classList.add("pic-style")
                 smallCard.classList.add(".card")
-                smallCard.innerHTML = `<img src = "${teddy.imageUrl}">`;
-                price.innerHTML = teddy.price
+                imgCard.classList.add("pic-style")
+                imgCard.innerHTML = `<img src = "${teddy.imageUrl}">`;
+                price.innerHTML = teddy.price + '$'
                 nomination.innerHTML = teddy.name
-            }  
-            
             smallCard.append(nomination)
             smallCard.append(price)
-            bigBox.append(smallCard) 
+            bigBox.append(smallCard) }  
+            
+            
     }  
         
     ) 
