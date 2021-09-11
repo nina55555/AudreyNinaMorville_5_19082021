@@ -172,3 +172,42 @@ function showProducts(products){
 
 getProducts();
 
+
+function getOneProduct(){
+    console.log("function get one product");
+    fetch('http://localhost:3000/api/teddies/:_$id')
+    .then(resp =>
+        resp.json()
+    )
+    .then(data => {  
+        showOneProduct(data);
+    }      
+    )
+    .catch((e)=> console.log(e));
+}
+
+
+
+function showOneProduct(product){
+
+}
+
+
+box.addEventListener("click", e =>{
+    e.preventDefault();
+    showOneProduct(teddy);
+} 
+)
+
+
+/*
+function chooseTeddy() {
+    box.addEventListener("click", e =>{
+        e.preventDefault();
+        let choosen = $this;
+        showProducts(choosen);
+    } 
+    )
+}
+chooseTeddy();
+*/
