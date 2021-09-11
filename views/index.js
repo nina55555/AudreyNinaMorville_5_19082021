@@ -173,6 +173,11 @@ function showProducts(products){
 getProducts();
 
 
+
+
+
+
+
 function getOneProduct(){
     console.log("function get one product");
     fetch('http://localhost:3000/api/teddies/:_$id')
@@ -185,7 +190,6 @@ function getOneProduct(){
     )
     .catch((e)=> console.log(e));
 }
-
 
 
 function showOneProduct(product){
