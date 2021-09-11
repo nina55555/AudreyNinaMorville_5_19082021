@@ -66,6 +66,7 @@ header ul li a {
 .container {
   background-image: url(/images/images.jpg);
   background-size: cover;
+  background-position-x: -80px;
   width: 100%;
   height: 100%;
 }
@@ -97,22 +98,23 @@ header ul li a {
 
 .big-box {
   width: 98%;
-  height: 78%;
-  margin: 0px auto 5px auto;
+  height: 70%;
+  padding: 5px;
+  margin: 0px auto 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .right-box {
-  background-color: transparent;
   width: 100%;
   height: 92%;
-  padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,13 +125,14 @@ header ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-y: auto;
 }
 
 .big-card {
   background-color: #52402f;
-  width: 48%;
+  width: 40%;
   height: 100%;
-  padding-top: 10px;
+  padding: 15px;
   border-radius: 5px;
   border: 1px solid #271e15;
   -webkit-box-shadow: 0px 0px 5px  black;
@@ -137,13 +140,16 @@ header ul li a {
   overflow-y: auto;
 }
 
-#teddy {
+.box-card {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   cursor: pointer;
+  overflow-y: auto;
 }
 
 /************
@@ -152,8 +158,8 @@ class à injecter via le javascript
 *************/
 .card {
   background-color: cadetblue;
-  width: 180px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -170,8 +176,7 @@ class à injecter via le javascript
 }
 
 .card-img {
-  width: 100%;
-  height: 115px;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,11 +186,14 @@ class à injecter via le javascript
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  margin: 0 auto;
 }
 
 .card-infos {
-  width: 100%;
+  background-color: darkgreen;
+  width: 80%;
   height: 35px;
+  margin: 0 auto;
 }
 
 .info-name {
