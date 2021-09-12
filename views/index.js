@@ -1,9 +1,11 @@
 
+//declaration des variables
 const box = document.getElementById("teddy")
 const cardTeddy = document.getElementById("card-teddy")
 
 
 
+//declaration de la fonction d'appel de l'api
 function getProducts(){
     console.log("function get products");
     fetch('http://localhost:3000/api/teddies')
@@ -17,6 +19,8 @@ function getProducts(){
     .catch((e)=> console.log(e));
 }
 
+
+//fonction de recuperation de l'api
 function showProducts(products){
     for (let teddy of products){
         box.innerHTML += 
@@ -34,7 +38,7 @@ function showProducts(products){
 getProducts();
 
 
-
+//declaration de la fonction d'appel à un identifiant de l'api
 function getOneProduct(teddy){
     console.log("function get one product");
     fetch('http://localhost:3000/api/teddies/:_$id')
@@ -50,7 +54,7 @@ function getOneProduct(teddy){
 
 
 
-
+//fonction de recuperation de l'identifiant de l'api
 function showOneProduct(data){
     cardTeddy.innerHTML +=
     `<div class ="card">
