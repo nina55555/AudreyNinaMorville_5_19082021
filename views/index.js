@@ -35,7 +35,7 @@ getProducts();
 
 
 
-function getOneProduct(){
+function getOneProduct(teddy){
     console.log("function get one product");
     fetch('http://localhost:3000/api/teddies/:_$id')
     .then(resp =>
@@ -51,7 +51,7 @@ function getOneProduct(){
 
 
 
-function showOneProduct(product){
+function showOneProduct(data){
     cardTeddy.innerHTML +=
     `<div class ="card">
         <div class ="card-img">
