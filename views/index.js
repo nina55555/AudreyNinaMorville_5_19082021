@@ -192,7 +192,20 @@ function getOneProduct(){
 }
 
 
+
+const cardTeddy = document.getElementById("card-teddy")
+
 function showOneProduct(product){
+    cardTeddy.innerHTML +=
+    `<div class ="card">
+        <div class ="card-img">
+            <img src =${teddy.imageUrl} alt="teddy's picture" />
+        </div>
+        <div class ="card-infos">
+            <p class ="info-name">${teddy.name}</p>
+            <p class ="info-price">${teddy.price}$</p>
+        </div>
+    </div>`;
 
 }
 
