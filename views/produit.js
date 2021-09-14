@@ -45,6 +45,11 @@ function showOneProduct(ted){
     infoPrice.classList.add('info-price')
     infoPrice.textContent = `${ted.price}`
 
+    const custom = document.createElement('button')
+    custom.setAttribute('type','btn')
+    custom.classList.add('customization')
+    custom.textContent = "Personnalisation"
+
 
     elementTeddy.appendChild(cardImg)
     elementTeddy.appendChild(cardInfos)
@@ -53,6 +58,7 @@ function showOneProduct(ted){
 
     cardInfos.appendChild(infoName)
     cardInfos.appendChild(infoPrice)
+    cardInfos.appendChild(custom)
 
     cardTeddy.appendChild(elementTeddy)
 }

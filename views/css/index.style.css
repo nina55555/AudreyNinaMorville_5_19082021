@@ -7,20 +7,6 @@
   overflow: hidden;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 header {
   background-color: cornsilk;
   width: 100%;
@@ -61,6 +47,20 @@ header ul li {
 header ul li a {
   text-decoration: none;
   color: black;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container {
@@ -157,7 +157,7 @@ class à injecter via le javascript
 
 *************/
 .card {
-  background-color: cadetblue;
+  background-color: #9c7543;
   width: 130px;
   height: 130px;
   display: -webkit-box;
@@ -190,7 +190,7 @@ class à injecter via le javascript
 }
 
 .card-infos {
-  background-color: darkgreen;
+  background-color: indigo;
   width: 80%;
   height: 35px;
   margin: 0 auto;

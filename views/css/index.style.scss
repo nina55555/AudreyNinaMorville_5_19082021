@@ -2,6 +2,18 @@
 
 
 
+
+
+body{
+    //background-color: rgb(205, 209, 208);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .container{
     //background-color: cadetblue;
     background-image: url(/images/images.jpg);
@@ -90,7 +102,8 @@ class à injecter via le javascript
 
 .card{
     //background-color: grey;
-    background-color: cadetblue;
+    //background-color: cadetblue;
+    background-color: #9c7543;
     //box-shadow: inset;
     width: 130px;
     height: 130px;
@@ -113,7 +126,7 @@ class à injecter via le javascript
 }
 
 .card-infos{
-    background-color: darkgreen;
+    background-color: indigo;
     width: 80%;
     height: 35px;
     margin: 0 auto;
