@@ -1,11 +1,10 @@
 
 //declaration des variables
-const box = document.getElementById("teddy")
-const cardTeddy = document.getElementById("card-teddy")
+const teddyBox = document.getElementById("teddy")
 
 
 
-//declaration de la fonction d'appel de l'api
+//declaration de la fonction d'appel de l'api avec la liste des teddies
 function getProducts(){
     console.log("function get products");
     fetch('http://localhost:3000/api/teddies')
@@ -22,26 +21,60 @@ function getProducts(){
 
 //fonction de recuperation de l'api
 function showProducts(products){
-    for (let teddy of products){
-        box.innerHTML += 
-        `<a href="produit.html" class ="card">
-            <div class ="card-img">
-                <img src =${teddy.imageUrl} alt="teddy's picture" />
-            </div>
-            <div class ="card-infos">
-                <p class ="info-name">${teddy.name}</p>
-                <p class ="info-price">${teddy.price}$</p>
-            </div>
-        </a>`;
+    for (const teddy of products){
+
+        const teddyElement = document.createElement('a')
+        teddyElement.setAttribute('href', `produit.html?id=${teddy._id}`)
+        teddyElement.classList.add('card')
+
+
+        const cardImg = document.createElement('div')
+        cardImg.classList.add('card-img')
+
+        const img = document.createElement('img')
+        img.setAttribute('src', teddy.imageUrl)
+        img.setAttribute('alt', "teddy's picture")
+
+        const cardInfos = document.createElement('div')
+        cardInfos.classList.add('card-infos')
+
+        const infoName = document.createElement('p')
+        infoName.classList.add('info-name')
+        infoName.textContent = teddy.name
+
+        const infoPrice = document.createElement('p')
+        infoPrice.classList.add('info-price')
+        infoPrice.textContent = teddy.price
+
+
+        teddyElement.appendChild(cardImg)
+        teddyElement.appendChild(cardInfos)
+
+        cardImg.appendChild(img)
+
+        cardInfos.appendChild(infoName)
+        cardInfos.appendChild(infoPrice)
+
+        teddyBox.appendChild(teddyElement)
     }
 }
 getProducts();
 
 
+
+
+
+
+
+
+
+
+
 //declaration de la fonction d'appel à un identifiant de l'api
 function getOneProduct(teddy){
     console.log("function get one product");
-    fetch('http://localhost:3000/api/teddies/:_$id')
+    //fetch('http://localhost:3000/api/teddies/:$id')
+    fetch (`http://localhost:3000/api/teddies/$teddy`)
     .then(resp =>
         resp.json()
     )
