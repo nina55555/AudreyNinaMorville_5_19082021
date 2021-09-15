@@ -101,7 +101,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 15px;
     text-transform: uppercase;
     box-shadow: 2px 2px 5px rgba($color: #080708, $alpha: 1.0);
   }
@@ -110,7 +110,6 @@ body {
   .info-price{
     //background-color: indigo;
     background-color: rgb(142, 82, 185);
-
     width: 50%;
     height: 55px;
     display: flex;
