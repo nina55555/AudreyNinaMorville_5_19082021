@@ -33,8 +33,8 @@ body {
   
   
   #card-teddy{
-    //background-color: coral;
-    width:100%;
+    background-color: rgb(51, 34, 28);
+    width:90%;
     //height: 85%;
     height: 100%;
     padding: 5px;
@@ -54,6 +54,7 @@ body {
     //background-color: darkcyan;
     width: 100%;
     height: 100%;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,17 +64,22 @@ body {
   .card-img{
       //background-color: green;
       width: 95%;
-      height: 50%;
+      height: 70%;
+      padding: 5px;
       display: flex;
       justify-content: center;
       align-items: center;
-      object-fit: contain;
+      //object-fit: contain;
   }
 
   
   img{
-      border-radius: 50px;
+      border-radius: 25px;
       border: 3px solid rgb(83, 45, 27);
+      height: 100%;
+      object-fit:fill;
+
+
   }
 
   
@@ -88,33 +94,47 @@ body {
   }
 
   .info-name{
-    background-color: indigo;
+    background-color: rgb(142, 82, 185);
     width: 50%;
     height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 5px rgba($color: #080708, $alpha: 1.0);
   }
 
 
   .info-price{
-    background-color: indigo;
+    //background-color: indigo;
+    background-color: rgb(142, 82, 185);
+
     width: 50%;
     height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba($color: #080708, $alpha: 1.0)
+
   }
 
 
   .customization{
-    background-color: indigo;
+    //background-color: indigo;
+    background-color: rgb(142, 82, 185);
+
     width: 50%;
     height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    font-size: 15px;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 5px rgba($color: #080708, $alpha: 1.0)
   }
+

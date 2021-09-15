@@ -1,16 +1,16 @@
 const cardTeddy = document.getElementById("card-teddy")
 
 
+
 const urlSearchParams = new URLSearchParams(window.location.search)
-
 const params = Object.fromEntries(urlSearchParams.entries())
-
 console.log(params)
 
 
 function getOneProduct(teddyId){
     console.log("function get one product");
     fetch (`http://localhost:3000/api/teddies/${teddyId}`)
+    //console.log(teddyId)
     .then(resp =>
         resp.json()
     )
@@ -43,7 +43,7 @@ function showOneProduct(ted){
 
     const infoPrice = document.createElement('p')
     infoPrice.classList.add('info-price')
-    infoPrice.textContent = `${ted.price}`
+    infoPrice.textContent = `${ted.price}$`
 
     const custom = document.createElement('button')
     custom.setAttribute('type','btn')

@@ -44,7 +44,7 @@ function showProducts(products){
 
         const infoPrice = document.createElement('p')
         infoPrice.classList.add('info-price')
-        infoPrice.textContent = teddy.price
+        infoPrice.textContent = teddy.price +`$`
 
 
         teddyElement.appendChild(cardImg)
