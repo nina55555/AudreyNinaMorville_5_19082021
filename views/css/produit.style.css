@@ -201,7 +201,7 @@ img {
           box-shadow: 2px 2px 5px #080708;
 }
 
-.customization {
+.dropdown-custom {
   background-color: #8e52b9;
   width: 50%;
   height: 55px;
@@ -219,5 +219,72 @@ img {
   text-transform: uppercase;
   -webkit-box-shadow: 2px 2px 5px #080708;
           box-shadow: 2px 2px 5px #080708;
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+  margin-bottom: 30px;
+}
+
+.cust-ul {
+  background-color: seagreen;
+  width: 90%;
+  height: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 40px;
+  -webkit-transition: height 1.5s ease-out;
+  transition: height 1.5s ease-out;
+}
+
+.dropdown-custom:hover .cust-ul {
+  opacity: 1;
+  height: 60px;
+}
+
+.link-a {
+  width: 100%;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.link-b {
+  width: 100%;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.opt1 {
+  width: 90%;
+  position: absolute;
+  text-align: center;
+}
+
+.opt2 {
+  width: 90%;
+  position: absolute;
+  text-align: center;
 }
 /*# sourceMappingURL=produit.style.css.map */
