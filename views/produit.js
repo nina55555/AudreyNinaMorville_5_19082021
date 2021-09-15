@@ -70,6 +70,11 @@ function showOneProduct(ted){
     opt2.classList.add('opt2')
     opt2.textContent ='option2'
 
+    const add = document.createElement('a')
+    add.setAttribute('href', 'panier.html')
+    add.classList.add('ajout')
+    add.textContent = 'ajouter dans mon panier'
+
 
     elementTeddy.appendChild(cardImg)
     elementTeddy.appendChild(cardInfos)
@@ -87,6 +92,7 @@ function showOneProduct(ted){
     cardInfos.appendChild(infoName)
     cardInfos.appendChild(infoPrice)
     cardInfos.appendChild(dropdown)
+    cardInfos.appendChild(add)
 
     cardTeddy.appendChild(elementTeddy)
 }
