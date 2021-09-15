@@ -48,7 +48,7 @@ function showOneProduct(ted){
 
     const dropdown = document.createElement('div')
     dropdown.classList.add('dropdown-custom')
-    dropdown.textContent = "Personnalisation"
+    dropdown.textContent = "Couleur"
 
     const cust = document.createElement('ul')
     cust.classList.add('cust-ul')
