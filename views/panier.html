@@ -5,33 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="./css/panier.style.css">
     
     <title>Panier</title>
 </head>
 <body>
+    <header>
+        <h1>
+            Orinoco
+        </h1>
+        <ul>
+            <li> <a href="#">acceuil</a> </li>
+            <li> <a href="#">contact</a> </li>
+        </ul>
+    </header>
     <div class="container">
         <h1>Panier</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <td>Mes produits</td>
-                    </tr>
-                </thead>
-                    <tr>
-                        <td>ref</td>
-                        <td>nom</td>
-                        <td>date</td>
-                        <td>img</td>
-                        <td>prix</td>
-                    </tr>
-            </table>
-            <a type="btn" href="panier.html" class="button">
-                <h2>Personnaliser</h2>
-            </a>
+            <div class="box" id="box-cart">
+
+            </div>
             <a type="btn" href="confirmation.html" class="button">
                 <h2>Commander</h2>
             </a>
     </div>
     
+    <script src="panier.js"></script>
 </body>
 </html>
