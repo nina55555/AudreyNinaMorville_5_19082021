@@ -1,7 +1,6 @@
 
-//declaration des variables
+//declaration des variables globales
 const teddyBox = document.getElementById("teddy")
-
 
 
 //declaration de la fonction d'appel de l'api avec la liste des teddies
@@ -44,7 +43,7 @@ function showProducts(products){
 
         const infoPrice = document.createElement('p')
         infoPrice.classList.add('info-price')
-        infoPrice.textContent = teddy.price +`$`
+        infoPrice.textContent = teddy.price/100 +`$`
 
 
         teddyElement.appendChild(cardImg)
@@ -61,19 +60,9 @@ function showProducts(products){
 getProducts();
 
 
-
-
-
-
-
-
-
-
-
 //declaration de la fonction d'appel à un identifiant de l'api
 function getOneProduct(teddy){
     console.log("function get one product");
-    //fetch('http://localhost:3000/api/teddies/:$id')
     fetch (`http://localhost:3000/api/teddies/$teddy`)
     .then(resp =>
         resp.json()
@@ -85,8 +74,7 @@ function getOneProduct(teddy){
     .catch((e)=> console.log(e));
 }
 
-
-
+/*
 //fonction de recuperation de l'identifiant de l'api
 function showOneProduct(data){
     cardTeddy.innerHTML +=
@@ -96,14 +84,16 @@ function showOneProduct(data){
         </div>
         <div class ="card-infos">
             <p class ="info-name">${teddy.name}</p>
-            <p class ="info-price">${teddy.price}$</p>
+            <p class ="info-price">${teddy.price/100} $</p>
         </div>
     </div>`;
 }
+*/
 
-
+/*
 document.box.addEventListener("click", e =>{
     e.preventDefault();
     showOneProduct(teddy);
 } 
 )
+*/

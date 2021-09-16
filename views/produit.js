@@ -1,6 +1,5 @@
 const cardTeddy = document.getElementById("card-teddy")
-
-
+const ajout = document.getElementsByClassName("ajout")
 
 
 const urlSearchParams = new URLSearchParams(window.location.search)
@@ -44,50 +43,31 @@ function showOneProduct(ted){
 
     const infoPrice = document.createElement('p')
     infoPrice.classList.add('info-price')
-    infoPrice.textContent = `${ted.price}$`
-
-    const dropdown = document.createElement('div')
-    dropdown.classList.add('dropdown-custom')
-    dropdown.textContent = "Couleur"
-
-    const cust = document.createElement('ul')
-    cust.classList.add('cust-ul')
-
-    const link = document.createElement('li')
-    link.classList.add('link-a')
+    infoPrice.textContent = `${ted.price/100}$`
 
     
-    const opt1 = document.createElement('a')
-    opt1.setAttribute('href', '#')
-    opt1.classList.add('opt1')
-    opt1.textContent ='option1'
+    const dropdown = document.createElement('select')
+    dropdown.name = 'colors'
+    dropdown.name = 'colors-select'
 
-    const link2 = document.createElement('li')
-    link2.classList.add('link-b')
-
-    const opt2 = document.createElement('a')
-    opt2.setAttribute('href', '#')
-    opt2.classList.add('opt2')
-    opt2.textContent ='option2'
+    for (const color of ted.colors) {
+        console.log(color)
+        const option = document.createElement('option')
+        option.value = color
+        option.text = color
+        dropdown.appendChild(option)
+    }
 
     const add = document.createElement('a')
     add.setAttribute('href', 'panier.html')
     add.classList.add('ajout')
     add.textContent = 'ajouter dans mon panier'
 
-
     elementTeddy.appendChild(cardImg)
     elementTeddy.appendChild(cardInfos)
 
     cardImg.appendChild(img)
 
-    dropdown.appendChild(cust)
-
-    cust.appendChild(link)
-    cust.appendChild(link2)
-
-    link.appendChild(opt1)
-    link2.appendChild(opt2)
 
     cardInfos.appendChild(infoName)
     cardInfos.appendChild(infoPrice)
@@ -102,12 +82,3 @@ getOneProduct(params.id);
 
 
 
-
-
-
-
-        
-           
-           
-    
-    
