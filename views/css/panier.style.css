@@ -98,6 +98,12 @@ body {
   padding: 5px;
 }
 
+.cart-item {
+  background-color: pink;
+  width: 90%;
+  height: 90%;
+}
+
 form {
   background-color: #705fa0;
   padding: 5px;
