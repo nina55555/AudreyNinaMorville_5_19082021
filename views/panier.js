@@ -32,25 +32,20 @@ function recupStorage(){
     console.log("recuperé")
 
     //mise en page avec les données recuperées
-    const elementPanier = document.createElement('div')
-    elementPanier.classList.add('cart-item')
+      
+    /*for (const produit of produits) {
+        console.log(produit)
+    */
+        const elementPanier = document.createElement('div')
+        elementPanier.classList.add('cart-item')
 
-
-
-    
-    for (const img of produit.imageUrl) {
-        console.log(imageUrl)
         const img = document.createElement('img')
-        img.setAttribute('src', '${produit.imageUrl}')
+        img.setAttribute('src', '${teddy.imageUrl}')
 
-    }
-
-
-
-    boxCart.appendChild(elementPanier)
-    elementPanier.appendChild(img)
+        boxCart.appendChild(elementPanier)
+        elementPanier.appendChild(img)
 }
-
+    
 
 //json.parse c'est pour convertir les donnees au format json qui sont dans le local storage en objet javascript
 
