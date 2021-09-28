@@ -5,10 +5,11 @@ const teddyBox = document.getElementById("teddy")
 
 //declaration de la fonction d'appel de l'api avec la liste des teddies
 function getProducts(){
-    console.log("function get products");
-    fetch('http://localhost:3000/api/teddies')
-    .then(resp =>
-        resp.json()
+    fetch('http://localhost:2025/api/teddies')
+    .then(function (resp){
+        
+        return resp.json()
+    }
     )
     .then(data => {  
         showProducts(data);

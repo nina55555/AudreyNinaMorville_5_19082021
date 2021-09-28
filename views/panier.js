@@ -1,13 +1,20 @@
+
+
 //declaration des variables globales
 const boxCart = document.getElementById('box-cart')
 const ajout = document.getElementsByClassName('ajout')
 
 
-//gestion du local storage pour recuperer l'id posé dans le panier
+
 
 //creation du addEventListener
 //ajout.addEventListener("click", () =>{
     //e.preventDefault()
+    //addCart(){   
+    //}
+
+
+//gestion du local storage pour recuperer l'id posé dans le panier
 
 //verifier si notre clé existe ou pas dans le local storage
 if (!localStorage.getItem("produit")){
@@ -17,14 +24,36 @@ if (!localStorage.getItem("produit")){
         recupStorage()
     }
 
-//pour sauvegarder les données dans le local storage
-function createStorage(){
+//sauvegarder les données dans le local storage
+//function createStorage(){
 //convertir l'objet javascript en objet json
-    localStorage.setItem(/*clé*/"produit", /*objet*/ JSON.stringify("${teddyId}"))
-    console.log("crée")
-} 
+    //localStorage.setItem(/*clé*/"produit",
+    ///*objet*/ JSON.stringify(`${teddyId}`))
 
-//pour recuperer les données sauvegardées
+
+
+function createStorage(teddy){
+    localStorage.setItem(
+        { 
+        cart: [
+          { 
+            "id": `${teddy.id}`,
+            "name": `${teddy.name}`,
+            "price":`${teddy.price}`,
+            "colors": `${teddy.colors}`,
+          } 
+        ] 
+      }
+    )
+     
+}
+
+
+    console.log("crée")
+
+//} 
+
+//recuperer les données sauvegardées
 function recupStorage(){
 //lire l'objet json en clair
     //localStorage.getItem((JSON.parse("produit"))
@@ -40,7 +69,7 @@ function recupStorage(){
         elementPanier.classList.add('cart-item')
 
         const img = document.createElement('img')
-        img.setAttribute('src', '${teddy.imageUrl}')
+        img.setAttribute('src', `${teddy.imageUrl}`)
 
         boxCart.appendChild(elementPanier)
         elementPanier.appendChild(img)
