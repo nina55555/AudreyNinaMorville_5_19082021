@@ -64,7 +64,7 @@ getProducts();
 //declaration de la fonction d'appel à un identifiant de l'api
 function getOneProduct(teddy){
     console.log("function get one product");
-    fetch (`http://localhost:3000/api/teddies/$teddy`)
+    fetch (`http://localhost:2025/api/teddies/$teddy`)
     .then(resp =>
         resp.json()
     )

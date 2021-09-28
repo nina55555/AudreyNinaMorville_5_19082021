@@ -25,7 +25,7 @@ function get(teddy) {
       const domItemImgBox = document.createElement('div')
       const domItemInfos = document.createElement('div')
       const domItemAdd = document.createElement('button')
-      const domItemCart = document.createElement('button')
+      const domItemCart = document.createElement('a')
 
 
       const domItemImg = document.createElement('img')
