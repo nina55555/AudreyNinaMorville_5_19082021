@@ -1,5 +1,6 @@
 
 
+
 //definition des query params pour manipuler les données de l'element au click
 const urlSearchParam = new URLSearchParams(window.location.search)
 const params = Object.fromEntries(urlSearchParam.entries())
@@ -9,15 +10,16 @@ console.log(params)
 //appelle à la fonction principale qui définie les query strings et recupere un teddy par son id avec le .id qui fait reference au parametre dans l'url
 get(params.id)
 
-//Déclaration de la fonction permettant l'appel a l'api pour l'afichage de ses données
+//Déclaration de la fonction permettant l'appel à l'api pour l'afichage des données d'un teddy en particulier
 function get(teddy) {
   //appelle a l'api
   fetch(`http://localhost:2025/api/teddies/${teddy}`)
     //Gestion de la promesse envoyé par l'api
     .then((resp) => resp.json())
     .then((data) => {
-      //console.log(teddy)
+      //Affichage des éléments du Dom
       console.log(data)
+
       const Container = document.getElementById('container')
 
       const domItem = document.createElement('div')
@@ -87,44 +89,57 @@ function get(teddy) {
 
       //au click
       domItemAdd.addEventListener('click', () => {
+        
         // Récupérer la couleur sélectionnée dans une constante
         const selectedColor = data.colors[domItemDropdown.selectedIndex]
         
         //Récuperer les données complètes de l'objet de l'api dans une constante
-        const produitItem = { // teddy
+        let produitItem = { // teddy
           "photo": data.imageUrl,
           "nom": data.name,
           "prix": data.price / 100 + "$",
-          "option":selectedColor
+          "option":selectedColor,
         }
         
+
+
         // On essaie de récup le panier depuis le localstorage si il y en a un
-        const savedCart = JSON.parse(localStorage.getItem('cart'))
+        let savedCart = JSON.parse(localStorage.getItem("cart"))
         console.log(`savedCart: ${savedCart}`)
 
        
 
+        //si il y a deja un produit dans le local storage
         if (savedCart) {
           console.log("J'ai deja defini un produit dans le local storage sous la clé cart ")
           savedCart.items.push(produitItem)
+          localStorage.setItem("cart", JSON.stringify(savedCart))
+          console.log(savedCart)
         }
         else {
           // Le panier n'existe pas.
-          const cart = {
-            totalPrice: 0, // prix total
-            items: [
-              {
-                "photo": data.imageUrl,
-                "nom": data.name,
-                "prix": data.price / 100 + "$",
-                "option":selectedColor
-              }
-            ], // articles ajoutés 
-          }
+          //création de la clé
+          let Cart  = {
+                  totalPrice: 0, // prix total
+                  items: [
+                    {
+                      "photo": data.imageUrl,
+                      "nom": data.name,
+                      "prix": data.price / 100 + "$",
+                      "option":selectedColor
+                    }
+                  ], // articles ajoutés 
+                
+                }
+          Cart.items.push(produitItem)
+          localStorage.setItem("cart", JSON.stringify(Cart))
+          console.log(Cart)
 
-          //on veut injecter les valeurs selectionnées dans le local storage 
+          //on veut injecter nos valeurs selectionnées  dans le local storage 
          
-          localStorage.setItem("cart", JSON.stringify(cart))
+
+          //push sur le setItem ??
+
            
           // localStorage.setTime('cart', cart)
 
@@ -134,7 +149,7 @@ function get(teddy) {
 
         //ou création d'un pop up pour demander à l'user si il veut ajouter un autre produit ou passer au paiement
 
-        alert("aller au panier ou choisir u autre article ?")
+        alert("aller au panier ou choisir un autre article ?")
         //window.location.href = "panier.html"
 
 
