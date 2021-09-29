@@ -4,81 +4,125 @@
 const boxCart = document.getElementById('box-cart')
 const ajout = document.getElementsByClassName('ajout')
 
+//on crée un espace tableau à remplir
+let cartStructure = []
+
+// On essaie de récup le panier depuis le localstorage si il y en a un
+let savedCart = JSON.parse(localStorage.getItem("cart"))
+console.log(`savedCart: ${savedCart}`)
 
 
-
-//creation du addEventListener
-//ajout.addEventListener("click", () =>{
-    //e.preventDefault()
-    //addCart(){   
-    //}
+main()
 
 
-//gestion du local storage pour recuperer l'id posé dans le panier
-
-//verifier si notre clé existe ou pas dans le local storage
-if (!localStorage.getItem("produit")){
-    createStorage()
-    recupStorage()
-    }else {
-        recupStorage()
+function main(){
+    //si le panier est vide
+    if(savedCart === null){
+        console.log("je me sens vide :-( ")
+        const domItemEmpty = document.createElement('div')
+        //domItemEmpty.textContent = savedCart
+        domItemEmpty.textContent = "Le panier est vide"
+        domItemEmpty.classList.add('empty-cart')
+        
+        //boxCart.innerHTML = domItemEmpty
+        boxCart.appendChild(domItemEmpty)
+        //boxCart.appendChild(domItemEmpty)
+    }
+    else{
+        console.log("je suis bien rempli")
+        //si le panier est déjà peuplé
+        for(s = 0; s < savedCart.lenght; s++)
+        cartStructure = cartStructure[s].name
     }
 
-//sauvegarder les données dans le local storage
-//function createStorage(){
-//convertir l'objet javascript en objet json
-    //localStorage.setItem(/*clé*/"produit",
-    ///*objet*/ JSON.stringify(`${teddyId}`))
-
-
-
-function createStorage(teddy){
-    localStorage.setItem(
-        { 
-        cart: [
-          { 
-            "id": `${teddy.id}`,
-            "name": `${teddy.name}`,
-            "price":`${teddy.price}`,
-            "colors": `${teddy.colors}`,
-          } 
-        ] 
-      }
-    )
-     
 }
 
 
-    console.log("crée")
 
-//} 
 
-//recuperer les données sauvegardées
-function recupStorage(){
-//lire l'objet json en clair
-    //localStorage.getItem((JSON.parse("produit"))
-    localStorage.getItem(("produit"))
-    console.log("recuperé")
 
-    //mise en page avec les données recuperées
-      
-    /*for (const produit of produits) {
-        console.log(produit)
-    */
-        const elementPanier = document.createElement('div')
-        elementPanier.classList.add('cart-item')
 
-        const img = document.createElement('img')
-        img.setAttribute('src', `${teddy.imageUrl}`)
 
-        boxCart.appendChild(elementPanier)
-        elementPanier.appendChild(img)
-}
+/*
+//Appel à la fonction principale
+
+main()
+
+
+//Déclaration de la fonction principale
+
+function main(){
+
+
+    //verifier si notre clé existe ou pas dans le local storage
+    if (!localStorage.getItem("cart")){
+        createStorage()
+        recupStorage()
+        }else {
+            recupStorage()
+        }
+
+
+
+
+    function createStorage(teddy){
+        localStorage.setItem(
+            { 
+            cart: [
+              { 
+                "id": `${teddy.id}`,
+                "name": `${teddy.name}`,
+                "price":`${teddy.price}`,
+                "colors": `${teddy.colors}`,
+              } 
+            ] 
+          }
+        )
+         
+    }
     
+        console.log("crée")
+    
+    //} 
+    
+    //recuperer les données sauvegardées
+    function recupStorage(teddy){
+        //appelle a l'api
+        fetch(`http://localhost:2025/api/teddies/${teddy}`)
+        //Gestion de la promesse envoyé par l'api
+        .then((resp) => resp.json())
+        .then((data) => {
+            //Affichage des éléments du Dom
+            console.log(data)
 
-//json.parse c'est pour convertir les donnees au format json qui sont dans le local storage en objet javascript
+            
+                //localStorage.getItem((JSON.parse("produit"))
+                localStorage.getItem(("cart"))
+                console.log("recuperé")
+            
+                //mise en page avec les données recuperées
+                
+                //for (const produit of produits) {
+                //    console.log(produit)
+                
+                    const elementPanier = document.createElement('div')
+                    elementPanier.classList.add('cart-item')
+            
+                    const domItemImg = document.createElement('img')
+                    domItemImg.setAttribute('src', 'teddy.imageUrl')
+            
+                    boxCart.appendChild(elementPanier)
+                    elementPanier.appendChild(domItemImg)
+                //}
+        })
+        
+    }
+}
+*/
 
-//convertir le json en object javascript pour le lire
 
-//fin du addEventListener
-//})
+
+
+
+
+

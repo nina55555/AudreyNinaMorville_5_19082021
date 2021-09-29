@@ -149,7 +149,7 @@ function get(teddy) {
 
         //ou création d'un pop up pour demander à l'user si il veut ajouter un autre produit ou passer au paiement
 
-        alert("aller au panier ou choisir un autre article ?")
+        alert("Article ajouté au panier, aller au panier ou choisir un autre article ")
         //window.location.href = "panier.html"
 
 
