@@ -5,22 +5,21 @@ const boxCart = document.getElementById('box-cart')
 const ajout = document.getElementsByClassName('ajout')
 
 //on crée un espace tableau à remplir
-let cartStructure = []
+let cartStructure = [];
 
 // On essaie de récup le panier depuis le localstorage si il y en a un
 let savedCart = JSON.parse(localStorage.getItem("cart"))
 console.log(`savedCart: ${savedCart}`)
 
 
-main()
+//main()
 
 
-function main(){
+//function main(){
     //si le panier est vide
     if(savedCart === null){
         console.log("je me sens vide :-( ")
         const domItemEmpty = document.createElement('div')
-        //domItemEmpty.textContent = savedCart
         domItemEmpty.textContent = "Le panier est vide"
         domItemEmpty.classList.add('empty-cart')
         
@@ -29,13 +28,25 @@ function main(){
         //boxCart.appendChild(domItemEmpty)
     }
     else{
-        console.log("je suis bien rempli")
-        //si le panier est déjà peuplé
-        for(s = 0; s < savedCart.lenght; s++)
-        cartStructure = cartStructure[s].name
+        const domItemCart = document.createElement('div')
+        domItemCart.classList.add('test')
+
+        /*for( k = 0; k < savedCart.length; k++)
+        }
+        */
+        for(let element of cartStructure){
+            console.log("i m finally there !!!")
+            console.log(element)
+        }
+        domItemCart.textContent = cartStructure
+
+
+        boxCart.appendChild(domItemCart)
+        
+        //}
     }
 
-}
+//}
 
 
 
