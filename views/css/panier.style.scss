@@ -51,6 +51,17 @@ form{
 }
 
 
+.box{
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+
+}
+
 
 /*************/
 
@@ -63,11 +74,100 @@ form{
     align-items: center;
 }
 
-.test{
-    background-color: rgb(42, 165, 83);
+
+.cart-content{
+    background-color: darkblue;
     width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+.title{
+    background-color: rgb(42, 165, 83);
+    width: 30%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.titleB{
+    background-color: rgb(42, 165, 83);
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.titleC{
+    background-color: rgb(42, 165, 83);
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.item-content{
+    background-color: darkmagenta;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 5px;
+}
+
+
+.item-list{
+    background-color: darkorange;
+    width: 30%;
+    height: 25px;
+    text-align: center;
+}
+
+
+
+.option-list{
+    background-color: darkorange;
+    width: 30%;
+    height: 25px;
+    text-align: center;
+}
+
+
+
+.prix-list{
+    background-color: darkorange;
+    width: 30%;
+    height: 25px;
+    text-align: center;
+}
+
+
+.total-content{
+    background-color: rgb(255, 28, 20);
+    width: 100%;
+    height: 25px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.total-price{
+    background-color: dimgrey;
+    width: 30%;
+    height: 100%;
+    margin-right: 10px;
 }

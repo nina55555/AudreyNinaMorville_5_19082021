@@ -100,10 +100,18 @@ body {
 }
 
 .cart-button {
-  background-color: #6200ff;
+  background-color: #d3c3ee;
   border: 1px solid black;
-  width: 500px;
-  height: 25px;
+  width: 55px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .card {

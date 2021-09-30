@@ -14,7 +14,8 @@ let cartStructure = [];
 
 // On essaie de récup le panier depuis le localstorage si il y en a un
 let savedCart = JSON.parse(localStorage.getItem("cart"))
-console.log(`savedCart: ${savedCart}`)
+//console.log(`savedCart: ${savedCart}`)
+console.log(savedCart)
 
 
 //main()
@@ -27,29 +28,97 @@ console.log(`savedCart: ${savedCart}`)
         const domItemEmpty = document.createElement('div')
         domItemEmpty.textContent = "Le panier est vide"
         domItemEmpty.classList.add('empty-cart')
-        
-        //boxCart.innerHTML = domItemEmpty
         boxCart.appendChild(domItemEmpty)
-        //boxCart.appendChild(domItemEmpty)
     }
-    else{
-        const domItemCart = document.createElement('div')
-        domItemCart.classList.add('test')
-
-        /*for( k = 0; k < savedCart.length; k++)
-        }
-        */
-        for(let element of cartStructure){
-            console.log("i m finally there !!!")
-            console.log(element)
-        }
-        domItemCart.textContent = cartStructure
+    else if (savedCart !== null) {
+        //si le panier n'est pas vide
+        cartStructure.push(savedCart)
+        //console.log(cartStructure)
+        //const domItemCart = document.createElement('div')
+        //domItemCart.classList.add('box-title')
 
 
-        boxCart.appendChild(domItemCart)
+        //affichage du contenu panier
+        const domItemBox = document.createElement('div')
+        domItemBox.classList.add('cart-content')
+
+        //affichage de la ligne des titres
+        const domItemTitle = document.createElement('div')
+        domItemTitle.classList.add('title')
+        domItemTitle.innerHTML = '<div> <h2>Nom produit:</h2></div>'
+
+        const domItemTitleB = document.createElement('div')
+        domItemTitleB.classList.add('titleB')
+        domItemTitleB.innerHTML = '<div> <h2>Option produit:</h2></div>'
+
+        
+        const domItemTitleC = document.createElement('div')
+        domItemTitleC.classList.add('titleC')
+        domItemTitleC.innerHTML = '<div> <h2>Prix produit:</h2></div>'
+       
+
+        //domItemCart.appendChild(domItemTitle)
+
+        domItemBox.appendChild(domItemTitle)
+        domItemBox.appendChild(domItemTitleB)
+        domItemBox.appendChild(domItemTitleC)
+
+
+
+            
+        boxCart.appendChild(domItemBox)
+
+        for (const itemCart of savedCart.items) {
+
+            const domItemCart = document.createElement('div')
+            domItemCart.classList.add('item-content')
+
+            const domItemContent1 = document.createElement('div')
+            domItemContent1.classList.add('item-list')
+            domItemContent1.textContent = `${itemCart.nom}`
+
+            const domItemContent2 = document.createElement('div')
+            domItemContent2.classList.add('option-list')
+            domItemContent2.textContent = `${itemCart.option}`
+
+            const domItemContent3 = document.createElement('div')
+            domItemContent3.classList.add('prix-list')
+            domItemContent3.textContent = `${itemCart.prix}`
+
+
+            /*
+            const domItemCart = document.createElement('div')
+            domItemCart1.classList.add('test')
+            domItemCart1.textContent = itemCart.nom
+
+            */
+
+            domItemCart.appendChild(domItemContent1)
+            domItemCart.appendChild(domItemContent2)
+            domItemCart.appendChild(domItemContent3)
+            boxCart.appendChild(domItemCart)            
+          }
+
+        const domItemTotal = document.createElement('div')
+        domItemTotal.classList.add('total-content')
+
+        const domItemTotal1 = document.createElement('div')
+        domItemTotal1.classList.add('total-price')
+        domItemTotal1.textContent = `total:${savedCart.items.prix}$`
+
+        domItemTotal.appendChild(domItemTotal1)
+        boxCart.appendChild(domItemTotal)
+
+    } 
+
+    //else {
+        
+    
+   
+      
         
         //}
-    }
+    
 
 //}
 
