@@ -4,6 +4,11 @@
 const boxCart = document.getElementById('box-cart')
 const ajout = document.getElementsByClassName('ajout')
 
+
+
+
+
+
 //on crée un espace tableau à remplir
 let cartStructure = [];
 
