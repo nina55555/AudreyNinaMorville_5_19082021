@@ -1,27 +1,18 @@
 
-
 //declaration des variables globales
 const boxCart = document.getElementById('box-cart')
 const ajout = document.getElementsByClassName('ajout')
-
-
-
-
-
 
 //on crée un espace tableau à remplir
 let cartStructure = [];
 
 // On essaie de récup le panier depuis le localstorage si il y en a un
 let savedCart = JSON.parse(localStorage.getItem("cart"))
-//console.log(`savedCart: ${savedCart}`)
 console.log(savedCart)
 
+main()
 
-//main()
-
-
-//function main(){
+function main(){
     //si le panier est vide
     if(savedCart === null){
         console.log("je me sens vide :-( ")
@@ -33,16 +24,12 @@ console.log(savedCart)
     else if (savedCart !== null) {
         //si le panier n'est pas vide
         cartStructure.push(savedCart)
-        //console.log(cartStructure)
-        //const domItemCart = document.createElement('div')
-        //domItemCart.classList.add('box-title')
 
-
-        //affichage du contenu panier
+        //affichage de la box des titres
         const domItemBox = document.createElement('div')
         domItemBox.classList.add('cart-content')
 
-        //affichage de la ligne des titres
+        //affichage du contenu des titres
         const domItemTitle = document.createElement('div')
         domItemTitle.classList.add('title')
         domItemTitle.innerHTML = '<div> <h2>Nom produit:</h2></div>'
@@ -50,21 +37,14 @@ console.log(savedCart)
         const domItemTitleB = document.createElement('div')
         domItemTitleB.classList.add('titleB')
         domItemTitleB.innerHTML = '<div> <h2>Option produit:</h2></div>'
-
         
         const domItemTitleC = document.createElement('div')
         domItemTitleC.classList.add('titleC')
         domItemTitleC.innerHTML = '<div> <h2>Prix produit:</h2></div>'
        
-
-        //domItemCart.appendChild(domItemTitle)
-
         domItemBox.appendChild(domItemTitle)
         domItemBox.appendChild(domItemTitleB)
         domItemBox.appendChild(domItemTitleC)
-
-
-
             
         boxCart.appendChild(domItemBox)
 
@@ -84,130 +64,67 @@ console.log(savedCart)
             const domItemContent3 = document.createElement('div')
             domItemContent3.classList.add('prix-list')
             domItemContent3.textContent = `${itemCart.prix}`
-
-
-            /*
-            const domItemCart = document.createElement('div')
-            domItemCart1.classList.add('test')
-            domItemCart1.textContent = itemCart.nom
-
-            */
-
+            
             domItemCart.appendChild(domItemContent1)
             domItemCart.appendChild(domItemContent2)
             domItemCart.appendChild(domItemContent3)
             boxCart.appendChild(domItemCart)            
           }
+    } 
+    const allPrices = []
+
+    console.log(savedCart.totalPrice)
 
         const domItemTotal = document.createElement('div')
         domItemTotal.classList.add('total-content')
 
         const domItemTotal1 = document.createElement('div')
         domItemTotal1.classList.add('total-price')
-        domItemTotal1.textContent = `total:${savedCart.items.prix}$`
+        domItemTotal1.textContent = `total:${savedCart.totalPrice}$`
 
         domItemTotal.appendChild(domItemTotal1)
         boxCart.appendChild(domItemTotal)
 
-    } 
-
-    //else {
-        
-    
-   
-      
-        
-        //}
-    
-
-//}
+    //on crée un evenement au click qui récupère les données du panier 
+    document.getElementById("button").addEventListener ("click", () =>{
+        console.log("helloooo")
 
 
+        //declaration d'une fonction pour recuperer les données du formulaire
+        send()
 
+        function send (){
 
-
-
-
-/*
-//Appel à la fonction principale
-
-main()
-
-
-//Déclaration de la fonction principale
-
-function main(){
-
-
-    //verifier si notre clé existe ou pas dans le local storage
-    if (!localStorage.getItem("cart")){
-        createStorage()
-        recupStorage()
-        }else {
-            recupStorage()
-        }
+            //on crée l'objet
+            const form = {
+                firstName:document.querySelector("#firstName").value,
+                lastName:document.querySelector("#lastName").value,
+                adress:document.querySelector("#adress").value,
+                city:document.querySelector("#city").value,
+                email:document.querySelector("#email").value
+            }
+            console.log("form")
+            console.log(form)
 
 
 
+            //mettre l'objet "recupValues" da,s le local storage
+            let recupForm= localStorage.setItem("form",JSON.stringify(form) )
 
-    function createStorage(teddy){
-        localStorage.setItem(
-            { 
-            cart: [
-              { 
-                "id": `${teddy.id}`,
-                "name": `${teddy.name}`,
-                "price":`${teddy.price}`,
-                "colors": `${teddy.colors}`,
-              } 
-            ] 
-          }
-        )
-         
-    }
-    
-        console.log("crée")
-    
-    //} 
-    
-    //recuperer les données sauvegardées
-    function recupStorage(teddy){
-        //appelle a l'api
-        fetch(`http://localhost:2025/api/teddies/${teddy}`)
-        //Gestion de la promesse envoyé par l'api
-        .then((resp) => resp.json())
-        .then((data) => {
-            //Affichage des éléments du Dom
-            console.log(data)
 
             
-                //localStorage.getItem((JSON.parse("produit"))
-                localStorage.getItem(("cart"))
-                console.log("recuperé")
-            
-                //mise en page avec les données recuperées
-                
-                //for (const produit of produits) {
-                //    console.log(produit)
-                
-                    const elementPanier = document.createElement('div')
-                    elementPanier.classList.add('cart-item')
-            
-                    const domItemImg = document.createElement('img')
-                    domItemImg.setAttribute('src', 'teddy.imageUrl')
-            
-                    boxCart.appendChild(elementPanier)
-                    elementPanier.appendChild(domItemImg)
-                //}
-        })
-        
-    }
-}
-*/
+            // On récup le panier depuis le localstorage 
+            let savedForm = JSON.parse(localStorage.getItem("form"))
 
 
+        //window.location = `confirmation.html`
 
+        } 
+    })  
+    
+}     
 
+           
 
 
 

@@ -23,34 +23,37 @@
         <h1>Panier</h1>
             <div class="box" id="box-cart">
                 <!--
-                    
                     <div class="cart__items"></div>
                     <div class="cart__items-count"></div>
                     <div class="cart__total"></div>
                 -->
-                    
             </div>
+            
             <form action="POST">
                 <label for="firstName">
-                    <input type="text" id ="firstName" name="firstName" placeholder="Votre prénom">
+                    <input type="text" id ="firstName" name="firstName" placeholder="Votre prénom" required>
                 </label>
                 <label for="lastName">
-                    <input type="text" id ="lastName" name="lastName" placeholder="Votre nom ">
+                    <input type="text" id ="lastName" name="lastName" placeholder="Votre nom "required>
                 </label>
                 <label for="adress">
-                    <input type="text" id ="adress" name="adress" placeholder="Votre adresse">
+                    <input type="text" id ="adress" name="adress" placeholder="Votre adresse"required>
                 </label>
                 <label for="city">
-                    <input type="text" id ="city" name="city" placeholder="Votre ville">
+                    <input type="text" id ="city" name="city" placeholder="Votre ville"required>
                 </label>
                 <label for="email">
-                    <input type="email" id ="email" name="email" placeholder="Votre email">
+                    <input type="email" id ="email" name="email" placeholder="Votre email"required>
                 </label>
-            </form>
 
-            <a type="btn" href="confirmation.html" class="button" id="button">
-                <h2>Commander</h2>
-            </a>
+                <input type="submit" class="button" id="button" value= commander>
+                <!--
+                   <a type="submit" href="confirmation.html" >
+                    <h2>Commander</h2>
+                </a> 
+                -->
+                
+            </form>
     </div>
     
     <script src="panier.js" defer></script>

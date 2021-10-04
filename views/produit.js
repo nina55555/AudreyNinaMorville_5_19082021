@@ -1,6 +1,4 @@
 
-
-
 //definition des query params pour manipuler les données de l'element au click
 const urlSearchParam = new URLSearchParams(window.location.search)
 const params = Object.fromEntries(urlSearchParam.entries())
@@ -23,19 +21,20 @@ function get(teddy) {
       const Container = document.getElementById('container')
 
       const domItem = document.createElement('div')
+      const domItemCart = document.createElement('a')
       const domItemTitle = document.createElement('h1')
       const domItemImgBox = document.createElement('div')
       const domItemInfos = document.createElement('div')
       const domItemAdd = document.createElement('button')
-      const domItemCart = document.createElement('a')
-
 
       const domItemImg = document.createElement('img')
       const domItemName = document.createElement('div')
       const domItemPrice = document.createElement('div')
 
-
       domItem.classList.add('card')
+      domItemCart.textContent = 'Panier'
+      domItemCart.classList.add('cart-button')
+      domItemCart.setAttribute('href', 'panier.html')
       domItemTitle.textContent = "Produit"
       domItemTitle.classList.add('title')
       domItemImgBox.classList.add('img-card')
@@ -45,17 +44,11 @@ function get(teddy) {
       domItemImg.height = 300
       domItemImg.setAttribute('alt', 'Teddy\'s picture')
       domItemInfos.classList.add('infos-card')
-      domItemAdd.classList.add('ajout')
-      domItemAdd.textContent = "Ajouter au panier"
-      domItemCart.classList.add('cart-button')
 
       domItemName.textContent = data.name
       domItemName.classList.add('name')
       domItemPrice.textContent = data.price / 100 + '$'
       domItemPrice.classList.add('price')
-      domItemCart.textContent = 'Panier'
-      domItemCart.setAttribute('href', 'panier.html')
-
 
       const domItemDropdown = document.createElement('select')
       domItemDropdown.name = 'colors'
@@ -70,13 +63,13 @@ function get(teddy) {
         option.text = color
         domItemDropdown.appendChild(option)
       }
-
+      domItemAdd.classList.add('ajout')
+      domItemAdd.textContent = "Ajouter au panier"
 
       domItemImgBox.appendChild(domItemImg)
       domItemInfos.appendChild(domItemName)
       domItemInfos.appendChild(domItemPrice)
       domItemInfos.appendChild(domItemDropdown)
-
 
       domItem.appendChild(domItemCart)
       domItem.appendChild(domItemTitle)
@@ -97,22 +90,20 @@ function get(teddy) {
         let produitItem = { // teddy
           "photo": data.imageUrl,
           "nom": data.name,
-          "prix": data.price / 100 + "$",
+          //"prix": data.price / 100 + "$",
+          "prix": data.price / 100,
           "option":selectedColor,
         }
         
-
-
         // On essaie de récup le panier depuis le localstorage si il y en a un
         let savedCart = JSON.parse(localStorage.getItem("cart"))
-        console.log(`savedCart: ${savedCart}`)
-
-       
-
+      
         //si il y a deja un produit dans le local storage
         if (savedCart) {
           console.log("J'ai deja defini un produit dans le local storage sous la clé cart ")
           savedCart.items.push(produitItem)
+          // Le nouveau résultat = résultat précédent + produit qu'on vient d'ajouter
+          savedCart.totalPrice = parseFloat(savedCart.totalPrice + produitItem.prix)
           localStorage.setItem("cart", JSON.stringify(savedCart))
           console.log(savedCart)
         }
@@ -120,141 +111,24 @@ function get(teddy) {
           // Le panier n'existe pas.
           //création de la clé
           let Cart  = {
-                  totalPrice: 0, // prix total
-                  items: [
-                    {
-                      "photo": data.imageUrl,
-                      "nom": data.name,
-                      "prix": data.price / 100 + "$",
-                      "option":selectedColor
-                    }
-                  ], // articles ajoutés 
-                
-                }
+            // prix total
+            totalPrice: 0,
+            // articles ajoutés
+            items: [],
+          }
+
           Cart.items.push(produitItem)
+          Cart.totalPrice = parseFloat(Cart.totalPrice + produitItem.prix)
+          /*
+          à utiliser sur les boutons remove:
+          Cart.totalPrice = Cart.totalPrice - produitItem.prix
+          */
           localStorage.setItem("cart", JSON.stringify(Cart))
           console.log(Cart)
-
-          //on veut injecter nos valeurs selectionnées  dans le local storage 
-         
-
-          //push sur le setItem ??
-
-           
-          // localStorage.setTime('cart', cart)
-
         }
 
-        //creation d un lien panier pour laisser le choix à l'user au lieu de le forcer
-
-        //ou création d'un pop up pour demander à l'user si il veut ajouter un autre produit ou passer au paiement
-
         alert("Article ajouté au panier, aller au panier ou choisir un autre article ")
-        //window.location.href = "panier.html"
-
-
-
       })
     })
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const cardTeddy = document.getElementById("card-teddy")
-const ajout = document.getElementsByClassName("ajout")
-
-
-const urlSearchParams = new URLSearchParams(window.location.search)
-const params = Object.fromEntries(urlSearchParams.entries())
-console.log(params)
-
-
-function getOneProduct(teddyId){
-    console.log("function get one product");
-    fetch (`http://localhost:3000/api/teddies/${teddyId}`)
-    //console.log(teddyId)
-    .then(resp =>
-        resp.json()
-    )
-    .then(data => {  
-        showOneProduct(data);
-    }      
-    )
-    .catch((e)=> console.log(e));
-}
-
-function showOneProduct(ted){
-    console.log(ted);
-
-    const elementTeddy = document.createElement('div')
-    elementTeddy.classList.add('card')
-
-    const  cardImg = document.createElement('div')
-    cardImg.classList.add('card-img')
-
-    const img = document.createElement('img')
-    img.setAttribute('src',`${ted.imageUrl}` )
-    img.setAttribute('alt', "teddy's picture")
-
-    const cardInfos = document.createElement('div')
-    cardInfos.classList.add('card-infos')
-
-    const infoName = document.createElement('p')
-    infoName.classList.add('info-name')
-    infoName.textContent = `${ted.name}`
-
-    const infoPrice = document.createElement('p')
-    infoPrice.classList.add('info-price')
-    infoPrice.textContent = `${ted.price/100}$`
-
-    
-    const dropdown = document.createElement('select')
-    dropdown.name = 'colors'
-    dropdown.name = 'colors-select'
-
-    for (const color of ted.colors) {
-        console.log(color)
-        const option = document.createElement('option')
-        option.value = color
-        option.text = color
-        dropdown.appendChild(option)
-    }
-
-    const add = document.createElement('a')
-    //add.setAttribute('href', 'panier.html')
-    //add.setAttribute('onclick', 'addCart()' )
-    add.classList.add('ajout')
-    add.textContent = 'ajouter dans mon panier'
-
-    elementTeddy.appendChild(cardImg)
-    elementTeddy.appendChild(cardInfos)
-
-    cardImg.appendChild(img)
-
-
-    cardInfos.appendChild(infoName)
-    cardInfos.appendChild(infoPrice)
-    cardInfos.appendChild(dropdown)
-    cardInfos.appendChild(add)
-
-    cardTeddy.appendChild(elementTeddy)
-}
-
-
-getOneProduct(params.id);
-
-
-
-*/
