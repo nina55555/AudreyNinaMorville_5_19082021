@@ -49,14 +49,47 @@ header ul li a {
 }
 
 .container {
-  background-color: dimgrey;
+  background-image: url("../images/images (5).jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: 55px;
   width: 100vw;
   height: 100vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5px;
 }
 
-.box {
-  background-color: #f34361;
+.container h2 {
+  margin-top: 90px;
+  margin-bottom: 10px;
+}
+
+.content {
+  background-color: #784180;
+  border: 2px solid black;
+  border-radius: 4px;
   width: 100%;
-  height: 25px;
+  height: 32%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fulfill {
+  font-size: 21px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 /*# sourceMappingURL=confirmation.style.css.map */

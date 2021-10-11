@@ -88,12 +88,17 @@ function get(teddy) {
         
         //Récuperer les données complètes de l'objet de l'api dans une constante
         let produitItem = { // teddy
+
+          "id": data._id,
+
           "photo": data.imageUrl,
           "nom": data.name,
           //"prix": data.price / 100 + "$",
           "prix": data.price / 100,
           "option":selectedColor,
         }
+
+        console.log(produitItem)
         
         // On essaie de récup le panier depuis le localstorage si il y en a un
         let savedCart = JSON.parse(localStorage.getItem("cart"))
