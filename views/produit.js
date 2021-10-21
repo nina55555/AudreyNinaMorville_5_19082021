@@ -78,7 +78,6 @@ function get(teddy) {
       domItem.appendChild(domItemAdd)
 
       Container.appendChild(domItem)
-      
 
       //au click
       domItemAdd.addEventListener('click', () => {
@@ -90,15 +89,12 @@ function get(teddy) {
         let produitItem = { // teddy
 
           "id": data._id,
-
           "photo": data.imageUrl,
           "nom": data.name,
-          //"prix": data.price / 100 + "$",
           "prix": data.price / 100,
           "option":selectedColor,
         }
-
-        console.log(produitItem)
+        //console.log(produitItem)
         
         // On essaie de récup le panier depuis le localstorage si il y en a un
         let savedCart = JSON.parse(localStorage.getItem("cart"))
@@ -121,19 +117,13 @@ function get(teddy) {
             // articles ajoutés
             items: [],
           }
-
-          Cart.items.push(produitItem)
-          Cart.totalPrice = parseFloat(Cart.totalPrice + produitItem.prix)
-          /*
-          à utiliser sur les boutons remove:
-          Cart.totalPrice = Cart.totalPrice - produitItem.prix
-          */
-          localStorage.setItem("cart", JSON.stringify(Cart))
-          console.log(Cart)
+        Cart.items.push(produitItem)
+        Cart.totalPrice = parseFloat(Cart.totalPrice + produitItem.prix)
+        localStorage.setItem("cart", JSON.stringify(Cart))
+        //console.log(Cart)
         }
 
         alert("Article ajouté au panier, aller au panier ou choisir un autre article ")
       })
     })
 }
-

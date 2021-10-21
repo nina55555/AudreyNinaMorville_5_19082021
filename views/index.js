@@ -1,6 +1,7 @@
 //appel à la fonction principale
 main()
 
+
 //Déclaration de la fonction princiale
 function main() {
     //appel à l'API de la liste des teddies
@@ -32,24 +33,15 @@ function main() {
       domItemInfos.appendChild(domItemName)
       domItemInfos.appendChild(domItemPrice)
 
-
-      //domItemImg.width = 80
-      //domItemImg.height = 80
-
       domItem.appendChild(domItemImg)
       domItem.appendChild(domItemInfos)
 
       //Evènement au click
       domItem.addEventListener('click', () => {
-        window.location = `produit.html?id=${produit._id}`
+      window.location = `produit.html?id=${produit._id}`
       })
       
       container.appendChild(domItem)
     }
   })
 }
-
-
-
-
-
