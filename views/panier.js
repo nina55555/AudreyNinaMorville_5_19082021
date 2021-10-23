@@ -132,7 +132,7 @@ console.log(savedCart)
                     return false
                 }
                 else if(!isEmail(email)){
-                    alert("regardez bien ceci n'est pas un email valide")
+                    alert("Regardez bien, ceci n'est pas un email valide, voyons !")
                     return false
                 }
                 //on fait une fonction avec des regex pour verifier le format de l'email
@@ -174,8 +174,6 @@ console.log(savedCart)
                     alert("Veuillez choisir un article sur la page d'accueil")
                     return false
                 }
-               
-
                 
                 //validation cote server
                 // Appel l'api avec le panier (form)
@@ -220,38 +218,3 @@ console.log(savedCart)
                 })
             } 
     }     
-
-
-    /*
-function usine(matieres) {
-    const coton = "coton"
-    const lin = "lin"
-
-    const matiere = {
-        
-    }
-    console.log(matieres.coton && matieres.lin)
-
-    if (matieres.coton && matieres.lin) {
-        return "t-shirt"
-    }
-
-    if (matieres.coton && matieres.tafta) {
-        return "pantalon"
-    }
-
-    if (matieres.soie && matieres.daim) {
-        return "robe"
-    }
-
-    return "peux pas fabriquer"
-}
-
-
-const coton = "coton"
-const lin = "lin"
-const vetement = usine(coton && lin)
-
-console.log(vetement)
-
-*/

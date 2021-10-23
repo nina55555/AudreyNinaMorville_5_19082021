@@ -117,10 +117,10 @@ function get(teddy) {
             // articles ajoutés
             items: [],
           }
-        Cart.items.push(produitItem)
-        Cart.totalPrice = parseFloat(Cart.totalPrice + produitItem.prix)
-        localStorage.setItem("cart", JSON.stringify(Cart))
-        //console.log(Cart)
+          Cart.items.push(produitItem)
+          Cart.totalPrice = parseFloat(Cart.totalPrice + produitItem.prix)
+          localStorage.setItem("cart", JSON.stringify(Cart))
+          //console.log(Cart)
         }
 
         alert("Article ajouté au panier, aller au panier ou choisir un autre article ")
