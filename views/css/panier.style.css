@@ -108,7 +108,6 @@ form {
   border-radius: 4px;
   width: 100%;
   height: 65%;
-  padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,8 +153,8 @@ form {
 }
 
 .title {
-  background-color: whitesmoke;
-  width: 30%;
+  background-color: #a07e5e;
+  width: 33%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -171,8 +170,8 @@ form {
 }
 
 .titleB {
-  background-color: whitesmoke;
-  width: 30%;
+  background-color: #a07e5e;
+  width: 33%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -188,8 +187,8 @@ form {
 }
 
 .titleC {
-  background-color: whitesmoke;
-  width: 30%;
+  background-color: #a07e5e;
+  width: 33%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -221,39 +220,38 @@ form {
 }
 
 .item-list {
-  background-color: whitesmoke;
-  width: 30%;
+  background-color: #a07e5e;
+  width: 33%;
   height: 25px;
   text-align: center;
+  padding-top: 5px;
 }
 
 .option-list {
-  background-color: whitesmoke;
-  width: 30%;
+  background-color: #a07e5e;
+  width: 33%;
   height: 25px;
   text-align: center;
+  padding-top: 5px;
 }
 
 .prix-list {
-  background-color: whitesmoke;
-  width: 30%;
+  background-color: #a07e5e;
+  width: 33%;
   height: 25px;
   text-align: center;
-}
-
-.remove-button {
-  background-color: #d3c3ee;
-  border: 1px solid black;
-  width: 55px;
-  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 5px 0 0 15%;
+}
+
+.remove-button {
+  background-color: #eec6c3;
+  border: 1px solid black;
+  width: 70%;
+  height: 100%;
+  margin-left: auto;
 }
 
 .total-content {

@@ -41,7 +41,6 @@ form{
     border-radius: 4px;
     width: 100%;
     height: 65%;
-    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,8 +75,9 @@ form{
 
 .title{
     //background-color: rgb(42, 165, 83);
-    background-color: whitesmoke;
-    width: 30%;
+    //background-color: whitesmoke;
+    background-color: rgb(160, 126, 94);
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -88,8 +88,9 @@ form{
 
 .titleB{
     //background-color: rgb(42, 165, 83);
-    background-color: whitesmoke;
-    width: 30%;
+    //background-color: whitesmoke;
+    background-color: rgb(160, 126, 94);
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -102,8 +103,9 @@ form{
 
 .titleC{
     //background-color: rgb(42, 165, 83);
-    background-color: whitesmoke;
-    width: 30%;
+    //background-color: whitesmoke;
+    background-color: rgb(160, 126, 94);
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -127,43 +129,48 @@ form{
 
 .item-list{
     //background-color: darkorange;
-    background-color: whitesmoke;
-    width: 30%;
+    //background-color: whitesmoke;    
+    background-color: rgb(160, 126, 94);
+    width: 33%;
     height: 25px;
     text-align: center;
+    padding-top: 5px;
 }
 
 
 
 .option-list{
     //background-color: darkorange;
-    background-color: whitesmoke;
-    width: 30%;
+    //background-color: whitesmoke;
+    background-color: rgb(160, 126, 94);
+    width: 33%;
     height: 25px;
     text-align: center;
+    padding-top: 5px;
 }
 
 
 
 .prix-list{
     //background-color: darkorange;
-    background-color: whitesmoke;
-    width: 30%;
+    background-color: rgb(160, 126, 94);
+    width: 33%;
     height: 25px;
     text-align: center;
+    display: flex;
+    padding: 5px 0 0 15%;
 }
 
 
 
 .remove-button{
     
-    background-color: rgb(211, 195, 238);
+    background-color: rgb(238, 198, 195);
     border: 1px solid black;
-    width: 55px;
-    height: 30px;
-    display: flex;
-    align-self: flex-end;
-    justify-content: center;
+    width: 70%;
+    height: 100%;
+    margin-left: auto;
+    
 }
 
 .total-content{

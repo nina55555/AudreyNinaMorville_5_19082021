@@ -60,14 +60,30 @@ console.log(savedCart)
                 domItemContent3.classList.add('prix-list')
                 domItemContent3.textContent = `${itemCart.prix}`
 
-                const domItemContent4 = document.createElement('div')
+                
+                const domItemContent4 = document.createElement('button')
                 domItemContent4.classList.add('remove-button')
                 domItemContent4.textContent = 'remove'
+
+                domItemContent3.appendChild(domItemContent4)
+
+                //fonction pour bouton remove
+                /*
+                remove()
+
+                function remove(){
+                    domItemContent4.addEventListener ('click', () => {console.log("hey you removed me, i'll miss you :-(");
+
+                    //console.log(savedCart)
+                    console.log("ho ho")
+                    })
+                }
+                */
 
                 domItemCart.appendChild(domItemContent1)
                 domItemCart.appendChild(domItemContent2)
                 domItemCart.appendChild(domItemContent3)
-                domItemCart.appendChild(domItemContent4)
+
                 boxCart.appendChild(domItemCart)            
             }
         } 
