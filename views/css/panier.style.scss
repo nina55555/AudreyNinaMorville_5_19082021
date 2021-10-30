@@ -51,6 +51,7 @@ form{
 
 /*************/
 
+
 .empty-cart{
     //background-color: brown;
     background-color: whitesmoke;
@@ -152,6 +153,18 @@ form{
     text-align: center;
 }
 
+
+
+.remove-button{
+    
+    background-color: rgb(211, 195, 238);
+    border: 1px solid black;
+    width: 55px;
+    height: 30px;
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+}
 
 .total-content{
     //background-color: rgb(255, 28, 20);

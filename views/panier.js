@@ -59,10 +59,15 @@ console.log(savedCart)
                 const domItemContent3 = document.createElement('div')
                 domItemContent3.classList.add('prix-list')
                 domItemContent3.textContent = `${itemCart.prix}`
-                
+
+                const domItemContent4 = document.createElement('div')
+                domItemContent4.classList.add('remove-button')
+                domItemContent4.textContent = 'remove'
+
                 domItemCart.appendChild(domItemContent1)
                 domItemCart.appendChild(domItemContent2)
                 domItemCart.appendChild(domItemContent3)
+                domItemCart.appendChild(domItemContent4)
                 boxCart.appendChild(domItemCart)            
             }
         } 
