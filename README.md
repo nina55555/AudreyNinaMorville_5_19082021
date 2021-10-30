@@ -11,4 +11,3 @@ Installation
 3. Taper la commande npm run start depuis la commande.
 4. Ouvrir le projet dans le navigateur.
 
-

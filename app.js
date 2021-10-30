@@ -28,8 +28,9 @@ app.use('/api/furniture', furnitureRoutes);
 app.use(express.static('views'));
 
 //pour etre dirigé sur la page html a partir de l'url de base 
+/*
 app.get('/', (req, resp) => {
   resp.sendFile(path.join(__dirname, '/views/index.html'));
 });
-
+*/
 module.exports = app;

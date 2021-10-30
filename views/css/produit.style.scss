@@ -48,6 +48,15 @@ body {
   //class à injecter depuis javascript
   //*********
 
+  .back-button{
+    background-color: rgb(211, 195, 238);
+    border: 1px solid black;
+    width: 55px;
+    height: 35px;
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+  }
 
   .cart-button{
     background-color: rgb(211, 195, 238);
