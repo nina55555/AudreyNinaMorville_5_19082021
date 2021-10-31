@@ -62,6 +62,14 @@ form{
 }
 
 
+.add-item{
+    background-color: rgb(238, 198, 195);
+    border: 1px solid black;
+    width: 120px;
+    height: 25px;
+    margin-left: auto;
+}
+
 .cart-content{
     //background-color: darkblue;
     background-color: whitesmoke;
@@ -195,4 +203,9 @@ form{
 .button{
     font-weight: bold;
     font-size: 17px;
+}
+
+
+.delete{
+    display: none;
 }

@@ -1,10 +1,15 @@
 
+
 //declaration des variables globales
 const boxCart = document.getElementById('box-cart')
 
 // On essaie de récup le panier depuis le localstorage si il y en a un
 let savedCart = JSON.parse(localStorage.getItem("cart"))
 console.log(savedCart)
+
+
+localStorage.setItem("cart", JSON.stringify(savedCart))
+
 
     main()
 
@@ -67,24 +72,27 @@ console.log(savedCart)
 
                 domItemContent3.appendChild(domItemContent4)
 
-                //fonction pour bouton remove
-                /*
-                remove()
-
-                function remove(){
-                    domItemContent4.addEventListener ('click', () => {console.log("hey you removed me, i'll miss you :-(");
-
-                    //console.log(savedCart)
-                    console.log("ho ho")
-                    })
-                }
-                */
-
                 domItemCart.appendChild(domItemContent1)
                 domItemCart.appendChild(domItemContent2)
                 domItemCart.appendChild(domItemContent3)
 
-                boxCart.appendChild(domItemCart)            
+                boxCart.appendChild(domItemCart)   
+
+                 //fonction pour bouton remove
+                 /*
+                remove()
+                    function remove(){
+                        domItemContent4.addEventListener ('click', () => {console.log("hey you removed me, i'll miss you :-(")
+                            if (savedCart){
+                                domItemCart.classList.add('delete')
+                                //console.log(savedCart)
+                                localStorage.removeItem('cart' )
+                                console.log("ho ho")
+                            }
+                        })
+                    } 
+                    */
+                         
             }
         } 
 

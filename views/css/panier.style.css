@@ -136,6 +136,14 @@ form {
           align-items: center;
 }
 
+.add-item {
+  background-color: #eec6c3;
+  border: 1px solid black;
+  width: 120px;
+  height: 25px;
+  margin-left: auto;
+}
+
 .cart-content {
   background-color: whitesmoke;
   width: 100%;
@@ -277,5 +285,9 @@ form {
 .button {
   font-weight: bold;
   font-size: 17px;
+}
+
+.delete {
+  display: none;
 }
 /*# sourceMappingURL=panier.style.css.map */
